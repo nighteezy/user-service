@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  user-service:
+    build: .
+    volumes:
+      - .:/app # монтируем весь проект внутрь контейнера
+      - /app/node_modules # чтобы node_modules контейнера не перезаписывались
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: postgres-db
+      DB_PORT: 5432
+      DB_USERNAME: postgres
+      DB_PASSWORD: mysecretpassword
+      DB_NAME: user_service_db
+    depends_on:
+      - postgres-db
+    command: npm run dev
+    tty: true
+
+  postgres-db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: user_service_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
