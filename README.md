@@ -46,6 +46,7 @@ docker-compose up --build
 
 ### 2. Структура проекта
 
+```bash
 src/
 ├── entities/ # Модели БД (например, User)
 ├── routes/ # Роуты API
@@ -57,10 +58,15 @@ src/
 ├── config/ # Подключение к БД
 ├── swagger.ts # Подключение к БД
 └── server.ts # Точка входа
+```
 
 ### 3. Документация
 
 Полная интерактивная документация доступна по адресу:
 http://localhost:3000/api/docs
+
+### 4. Postman Collection
+
+Для удобного тестирования API доступна коллекция запросов.
 
 [Postman Collection](https://telecoms-geoscientist-36440501-4149124.postman.co/workspace/Alexey-Chernecki's-Workspace~9895b577-0722-4852-8a7c-a22357aa0dac/collection/47106786-d1f0fe16-7e5d-43ea-9075-1cb8d4d2ad8f?action=share&source=copy-link&creator=47106786)
