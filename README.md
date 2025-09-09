@@ -56,7 +56,7 @@ src/
 ├── schemas/ # Схемы валидации (Joi)
 ├── types/ # DTO и типы
 ├── config/ # Подключение к БД
-├── swagger.ts # Подключение к БД
+├── swagger.ts # Конфигурация Swagger
 └── server.ts # Точка входа
 ```
 
